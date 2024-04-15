@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
+
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
+  font-family: "M PLUS Rounded 1c", sans-serif;
   > * {
     padding: 40px 0;
   }
@@ -11,24 +13,56 @@
 
 .title {
   font-size: 50px;
+  margin-right: auto;
+  margin-left: 15px;
+  color: white;
 }
 
 .button {
-  padding: 10px;
-  border-radius: 10px;
-  border:none;
+  margin-left: auto;
+  margin-right: 15px;
+  position: relative;
+  padding: 10px 40px;
+  padding-right: 20px;
+  border: solid black 2px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
   color: black;
-  background-color: rgb(255, 255, 255);
-
-  &:hover {
-    background-color: rgb(243, 243, 243);
-  }
-
-  &:active {
-    background-color: rgb(228, 228, 228);
-  }
+  font-size: 1em;
+  cursor: pointer;
 }
 
-.counter {
-  font-size: 50px;
+.border_red:hover {
+  background-color: black;
+  color: white;
+  border: solid white 2px;
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.background_image {
+  border: solid white 2px;
+  background-color: purple;
+  margin: auto;
+  width: 100%;
 }
