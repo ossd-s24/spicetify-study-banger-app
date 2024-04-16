@@ -8,9 +8,9 @@ interface Props {
 const StudyTimePage: React.FC<Props> = ({onEndStudy}) => {
     return (
         <>
-            <button className={styles.button} onClick={onEndStudy}>
-                <span className={`${styles.circle} ${styles.green}`} />{"Study On"}
-            </button>
+            <button className={`${styles.button} ${styles.border_green}`} onClick={onEndStudy}>
+                    <span className={`${styles.circle} ${styles.green}`} />{"Study on"}
+                </button>
             <div className={styles.title}>{"Study Time!"}</div>
         </>
     );

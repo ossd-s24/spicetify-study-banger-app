@@ -14,6 +14,16 @@ const ReadyToStudyPage: React.FC<Props> = ({onStartStudy}) => {
                 </button>
                 <div className={styles.title}>{"Are You Ready to Study?"}</div>
             </div>
+
+            <div className={styles.book}>
+                <span className={styles.bookcover}></span>
+                <span className={`${styles.flip} ${styles.bookpage}`}></span>
+                <span className={`${styles.flip} ${styles.bookpage}`}></span>
+                <span className={styles.bookpage}></span>
+                <span className={`${styles.bookcover} ${styles.flip}`}></span>
+            </div>
+
+            <div className={styles.motivation}>{"Time to Hit the Books!"}</div>
         </>
     );
 };

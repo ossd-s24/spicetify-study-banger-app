@@ -4,5 +4,5 @@
   }
 
   // Show message on start.
-  Spicetify.showNotification("Study Time!");
+  Spicetify.showNotification("You are using Study Banger!");
 })()
