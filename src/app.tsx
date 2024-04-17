@@ -28,6 +28,11 @@ class App extends React.Component<{}, { count: number }> {
       // ... more playlists
     ];
 
+    const tags = [
+      'Study Music',
+      'Pop Classical Music'
+    ]
+
     return <>
       <div
         className={`${styles.hero}`}
@@ -37,6 +42,7 @@ class App extends React.Component<{}, { count: number }> {
       </div>
       <div className={styles.container}>
         <div className={styles.title}>{"Study Music"}</div>
+        <div className={styles.container}>{"Music to help you focus and study"}</div>
         <div className={styles.playlists}>
           {playlists.map((playlist) => (
             <div key={playlist.id} className={styles.card}>
