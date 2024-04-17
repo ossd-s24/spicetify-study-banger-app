@@ -1,27 +1,35 @@
 import styles from './css/app.module.scss'
 import React from 'react'
+import ReadyToStudyPage from './ReadyToStudyPage';
+import StudyTimePage from './StudyTimePage';
 
-class App extends React.Component<{}, {count: number}> {
+class App extends React.Component<{}, {count: number; isStudyTime: boolean}> {
   state = {
     count: 0,
+    isStudyTime: false,
   };
 
-  stopConfettiTimeout: NodeJS.Timeout | null = null;
-
-  onButtonClick = () => {
-    this.setState((state) => {
-      return {
-        count: state.count+1,
-      }
-    });
+  toggleStudyTime = () => {
+    this.setState((state) => ({
+      count: state.count + 1, 
+      isStudyTime: !state.isStudyTime,
+    }));
   };
+
+  renderPage = () => {
+    const {isStudyTime} = this.state;
+
+    if (isStudyTime) {
+      return <StudyTimePage onEndStudy={this.toggleStudyTime} />;
+    }
+
+    return <ReadyToStudyPage onStartStudy={this.toggleStudyTime} />;
+  }
 
   render() {
     return <>
       <div className={styles.container}>
-        <div className={styles.title}>{"My Custom App!"}</div>
-        <button className={styles.button} onClick={this.onButtonClick}>{"Count up"}</button>
-        <div className={styles.counter}>{this.state.count}</div>
+        {this.renderPage()}
       </div>
     </>
   } 
