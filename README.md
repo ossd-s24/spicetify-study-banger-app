@@ -14,3 +14,6 @@ Check out [Spicetify's docs](https://spicetify.app/docs/development/spicetify-cr
 
 ## Made with Spicetify Creator
 - https://github.com/spicetify/spicetify-creator
+
+## Study Bangers Figma Wireframe
+- [Figma](https://www.figma.com/file/Wvl0IjGngqRootVe5LMgcd/Study-Bangers?type=design&node-id=0%3A1&mode=design&t=ZHV8Whl6m5EBNpfV-1)
