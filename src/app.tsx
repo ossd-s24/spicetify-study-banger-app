@@ -4,12 +4,27 @@ import ReadyToStudyPage from './ReadyToStudyPage';
 import StudyTimePage from './StudyTimePage';
 import SpotifyService from './SpotifyService';
 
-class App extends React.Component<{}, { count: number; isStudyTime: boolean; selectedPlaylistId: string | null; }> {
+class App extends React.Component<{}, { count: number; isStudyTime: boolean; userPlaylists: any[]; selectedPlaylistId: string | null; }> {
   state = {
     count: 0,
     isStudyTime: false,
+    userPlaylists: [],
     selectedPlaylistId: null,
   };
+
+  componentDidMount() {
+    this.fetchUserPlaylists();
+  }
+
+  fetchUserPlaylists = async () => {
+    try {
+      const playlists = await SpotifyService.getUserPlaylists();
+      this.setState({ userPlaylists: playlists });
+    } catch (error) {
+      console.error('Error fetching user playlists:', error);
+      // Handle errors, e.g. by setting an error state or notifying the user
+    }
+  }
 
   toggleStudyTime = () => {
     this.setState((state) => ({
@@ -27,13 +42,13 @@ class App extends React.Component<{}, { count: number; isStudyTime: boolean; sel
   }
 
   renderPage = () => {
-    const { isStudyTime } = this.state;
+    const { isStudyTime, userPlaylists } = this.state;
 
     if (isStudyTime) {
       return <StudyTimePage onEndStudy={this.toggleStudyTime} />;
     }
 
-    return <ReadyToStudyPage onStartStudy={this.toggleStudyTime} onSelectPlaylist={this.handleSelectPlaylist} />;
+    return <ReadyToStudyPage onStartStudy={this.toggleStudyTime} userPlaylists={userPlaylists} onSelectPlaylist={this.handleSelectPlaylist} />;
   }
 
   render() {

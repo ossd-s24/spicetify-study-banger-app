@@ -11,6 +11,18 @@ class SpotifyService {
     return accessToken;
   }
 
+  //pulling users playlists
+  static async getUserPlaylists() {
+    const accessToken = this.getAccessToken();
+    const response = await fetch(`https://api.spotify.com/v1/me/playlists`, {
+      headers: {
+        'Authorization': `Bearer ${accessToken}`,
+      },
+    });
+    const data = await response.json();
+    return data.items;
+  }
+
   // Search for playlists using Spotify's Search API
   static async searchPlaylists(query: string) {
     const accessToken = SpotifyService.getAccessToken();

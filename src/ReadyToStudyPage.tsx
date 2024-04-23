@@ -1,48 +1,53 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './css/app.module.scss';
-import SpotifyService from './SpotifyService';
-
-interface Props {
-  onStartStudy: () => void;
-  onSelectPlaylist: (playlistId: string) => void;
-}
 
 interface Playlist {
   id: string;
   name: string;
 }
 
-const ReadyToStudyPage: React.FC<Props> = ({ onStartStudy, onSelectPlaylist }) => {
-  const [query, setQuery] = useState('');
-  const [playlists, setPlaylists] = useState<Playlist[]>([]);
+interface Props {
+  onStartStudy: () => void;
+  onSelectPlaylist: (playlistId: string) => void;
+  userPlaylists: Playlist[];
+}
 
-  const handleSearch = async () => {
-    const results = await SpotifyService.searchPlaylists(query);
-    setPlaylists(results);
-  };
-
+const ReadyToStudyPage: React.FC<Props> = ({ onStartStudy, onSelectPlaylist, userPlaylists }) => {
   return (
-    <>
+    <div className={styles.readyToStudyPage}>
       <div className={styles.background_image}>
-        <input
-          type="text"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search Playlists"
-        />
-        <button onClick={handleSearch}>Search</button>
         <button className={`${styles.button} ${styles.border_red}`} onClick={onStartStudy}>
-          <span className={`${styles.circle} ${styles.red}`} />{"Study Off"}
+          <span className={`${styles.circle} ${styles.red}`} /> Study Off
         </button>
-        <div className={styles.title}>{"Are You Ready to Study?"}</div>
+        <div className={styles.title}>Are You Ready to Study?</div>
       </div>
-      {playlists.map((playlist) => (
-        <div key={playlist.id} onClick={() => onSelectPlaylist(playlist.id)}>
-          {playlist.name}
-        </div>
-      ))}
-      <div className={styles.motivation}>{"Time to Hit the Books!"}</div>
-    </>
+
+      <div className={styles.playlistContainer}>
+        {userPlaylists.length > 0 ? (
+          userPlaylists.map((playlist) => (
+            <div
+              key={playlist.id}
+              className={styles.playlistItem}
+              onClick={() => onSelectPlaylist(playlist.id)}
+            >
+              {playlist.name}
+            </div>
+          ))
+        ) : (
+          <div className={styles.noPlaylistsMessage}>You don't have any playlists yet.</div>
+        )}
+      </div>
+
+      <div className={styles.motivation}>Time to Hit the Books!</div>
+
+      <div className={styles.book}>
+        <span className={styles.bookcover}></span>
+        <span className={`${styles.flip} ${styles.bookpage}`}></span>
+        <span className={`${styles.flip} ${styles.bookpage}`}></span>
+        <span className={styles.bookpage}></span>
+        <span className={`${styles.flip} ${styles.bookcover}`}></span>
+      </div>
+    </div>
   );
 };
 
