@@ -12,5 +12,12 @@
     "@types/react": "^18.2.74",
     "@types/react-dom": "^18.2.24",
     "spicetify-creator": "^1.0.17"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "spotify-web-api-node": "^5.0.2",
+    "typescript": "^5.4.5"
   }
 }
