@@ -20,10 +20,14 @@ class App extends React.Component<{}, { count: number; isStudyTime: boolean }> {
     const { isStudyTime } = this.state;
 
     if (isStudyTime) {
-      return <StudyTimePage onEndStudy={this.toggleStudyTime} />;
+      return <StudyTimePage onEndStudy={() => {
+        this.toggleStudyTime();
+      }} />;
     }
 
-    return <ReadyToStudyPage onStartStudy={this.toggleStudyTime} />;
+    return <ReadyToStudyPage onStartStudy={() => {
+      this.toggleStudyTime();
+    }} />;
   }
 
   render() {

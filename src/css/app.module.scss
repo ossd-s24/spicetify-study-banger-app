@@ -58,6 +58,7 @@
   margin-right: auto;
   margin-left: 15px;
   color: white;
+  // align-self: center;
 }
 
 .playlists {
@@ -145,6 +146,7 @@
   background-color: purple;
   margin: auto;
   width: 100%;
+  justify-content: center;
 }
 
 @keyframes openbook {

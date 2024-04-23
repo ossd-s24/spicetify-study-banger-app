@@ -8,7 +8,7 @@ interface Props {
 const ReadyToStudyPage: React.FC<Props> = ({ onStartStudy }) => {
     return (
         <>
-            <div className={styles.background_image}>
+            <div className={styles.hero}>
                 <button className={`${styles.button} ${styles.border_red}`} onClick={onStartStudy}>
                     <span className={`${styles.circle} ${styles.red}`} />{"Study Off"}
                 </button>
