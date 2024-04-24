@@ -5,7 +5,21 @@ interface Props {
     onEndStudy: () => void;
 }
 
-const StudyTimePage: React.FC<Props> = ({onEndStudy}) => {
+const StudyTimePage: React.FC<Props> = ({ onEndStudy }) => {
+
+    // TODO: replace this with state and backend data
+    const playlists = [
+        // This would actually be dynamic data
+        { id: 1, title: "chill lofi study beats", description: "The perfect study beats. Find your focus, crush yo..." },
+        { id: 2, title: "chill lofi study beats", description: "The perfect study beats. Find your focus, crush yo..." },
+        { id: 3, title: "chill lofi study beats", description: "The perfect study beats. Find your focus, crush yo..." },
+        // ... more playlists
+    ];
+
+    const tags = [
+        'Study Music',
+        'Pop Classical Music'
+    ]
     return (
         <>
 
