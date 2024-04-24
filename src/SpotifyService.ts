@@ -1,3 +1,6 @@
+//Issue is currently working with Spotify API bipassing the setup of Spicetify internal API wrapper. need to rewrite for that.
+
+
 class SpotifyService {
   constructor() {}
 
