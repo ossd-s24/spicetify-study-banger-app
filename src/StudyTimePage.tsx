@@ -5,6 +5,7 @@ interface Props {
     onEndStudy: () => void;
 }
 
+// study
 const StudyTimePage: React.FC<Props> = ({onEndStudy}) => {
     return (
         <>
