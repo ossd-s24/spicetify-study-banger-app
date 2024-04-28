@@ -5,9 +5,9 @@ interface Props {
     onEndStudy: () => void;
 }
 
-const StudyTimePage: React.FC<Props> = ({ onEndStudy }) => {
-    const [timer, setTimer] = useState<number>(25*60); 
-    const [isRunning, setIsRunning] = useState<boolean>(true); 
+const StudyTimePage: React.FC<Props> = ({ onEndStudy, onChangeTheme }) => {
+    const [timer, setTimer] = useState<number>(25*60);
+    const [isRunning, setIsRunning] = useState<boolean>(true);
     const [isPaused, setIsPaused] = useState<boolean>(true);
 
     useEffect(() => {
@@ -71,6 +71,9 @@ const StudyTimePage: React.FC<Props> = ({ onEndStudy }) => {
             >
                 <button className={`${styles.button} ${styles.border_green}`} onClick={onEndStudy}>
                     <span className={`${styles.circle} ${styles.green}`} />{"Study on"}
+                </button>
+                <button className={`${styles.button} ${styles.border_green}`} onClick={onChangeTheme}>
+                    <span className={`${styles.circle} ${styles.green}`} />{"Change theme"}
                 </button>
                 <h1 className='bigTitle'>Study Sessions with Study Banger</h1>
             </div>
