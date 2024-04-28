@@ -25,7 +25,6 @@ WE value and encourage any type of contribution. See the [Table of Contents](#ta
 
 
 ## I Have a Question
-
 Before you ask a question, it is best to search for existing [Issues](https://github.com/ossd-s24/spicetify-study-banger-app/issues) that might help you.
 
 If you then still feel the need to ask a question and need clarification, we recommend the following:
