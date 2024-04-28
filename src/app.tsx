@@ -130,12 +130,12 @@ class App extends React.Component<{}, {count: number; isStudyTime: boolean; late
     if (isStudyTime) {
       return <StudyTimePage onEndStudy={() => {
         this.toggleStudyTime();
-      }} onChangeTheme={() => { this.toggleLateNightTheme(); }} />;
+      }} onChangeTheme={() => { this.toggleLateNightTheme(); }}/>;
     }
 
     return <ReadyToStudyPage onStartStudy={() => {
       this.toggleStudyTime();
-    }} onChangeTheme={() => { this.toggleLateNightTheme(); }} />;
+    }} />;
   }
 
   render() {

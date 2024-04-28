@@ -5,9 +5,9 @@ interface Props {
     onEndStudy: () => void;
 }
 
-const StudyTimePage: React.FC<Props> = ({ onEndStudy }) => {
-    const [timer, setTimer] = useState<number>(25*60); 
-    const [isRunning, setIsRunning] = useState<boolean>(true); 
+const StudyTimePage: React.FC<Props> = ({ onEndStudy, onChangeTheme }) => {
+    const [timer, setTimer] = useState<number>(25*60);
+    const [isRunning, setIsRunning] = useState<boolean>(true);
     const [isPaused, setIsPaused] = useState<boolean>(true);
 
     useEffect(() => {
