@@ -125,20 +125,27 @@ class App extends React.Component<{}, {count: number; isStudyTime: boolean; late
 
 
   renderPage = () => {
-    const {isStudyTime} = this.state;
+    const { isStudyTime } = this.state;
 
     if (isStudyTime) {
-      return <StudyTimePage onEndStudy={this.toggleStudyTime} onChangeTheme={this.toggleLateNightTheme}/>;
+      return <StudyTimePage onEndStudy={() => {
+        this.toggleStudyTime();
+      }} onChangeTheme={() => { this.toggleLateNightTheme(); }} />;
     }
 
-    return <ReadyToStudyPage onStartStudy={this.toggleStudyTime} />;
+    return <ReadyToStudyPage onStartStudy={() => {
+      this.toggleStudyTime();
+    }} onChangeTheme={() => { this.toggleLateNightTheme(); }} />;
   }
 
   render() {
+
+
+
     return <>
-      <div className={styles.container}>
-        {this.renderPage()}
-      </div>
+      {
+        this.renderPage()
+      }
     </>
   }
 }

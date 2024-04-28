@@ -2,20 +2,100 @@
 
 .container {
   display: flex;
+  flex-direction: column;
+  // align-items: center;
+  color: white;
+  // min-height: 100vh;
+  width: 100%;
+  padding-top: 3%; // Space at the top
+  padding-left: 3%;
+}
+
+.loadingContainer {
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   font-family: "M PLUS Rounded 1c", sans-serif;
-  > * {
+
+  >* {
     padding: 40px 0;
   }
 }
 
+.hero {
+  display: flex;
+  height: 25vh;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 2em;
+  padding-top: 5%; // Space at the top
+  padding-left: 2em;
+  width: 100%;
+  // gap: 1rem; // Space between elements
+  // background image
+  background-image: url('https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  color: #FFF;
+}
+
+.bigTitle {
+  font-size: 3rem;
+  margin-bottom: 2rem; // Spacing below the title
+  font-weight: bold;
+  color: #FFF;
+
+}
+
 .title {
+  font-size: 2rem;
+  margin-bottom: 2rem; // Spacing below the title
+  font-weight: bold;
+}
+
+.loadingTitle {
   font-size: 50px;
   margin-right: auto;
   margin-left: 15px;
   color: white;
+  // align-self: center;
+}
+
+.playlists {
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: center;
+  gap: 1.5rem; // Space between cards
+  padding: 0 2%; // Horizontal padding
+  max-width: 1000px; // Maximum width of the playlists area
+  // background-color: red;
+}
+
+.card {
+  background: #1E1E1E; // Card background color
+  border-radius: 8px;
+  width: 200px; // Adjusted for correct card size
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.cardImage {
+  width: 100%;
+  height: 120px; // Adjusted for correct image height
+  object-fit: cover;
+  background: #333; // Placeholder for the image
+}
+
+.cardContent {
+  padding: 10px;
+  // text-align: center; // Center text alignment for the card
+}
+
+.cardTitle {
+  font-size: 1rem;
+  color: #FFF; // Light grey for titles
+  margin-bottom: 0.5rem;
 }
 
 .button {
@@ -36,7 +116,8 @@
   cursor: pointer;
 }
 
-.border_red:hover, .border_green:hover{
+.border_red:hover,
+.border_green:hover {
   background-color: black;
   color: white;
   border: solid white 2px;
@@ -65,17 +146,29 @@
   background-color: purple;
   margin: auto;
   width: 100%;
+  justify-content: center;
 }
 
 @keyframes openbook {
-  20% { z-index: 10 }
-  100% {  transform: rotateY(180deg);
-    z-index: 20;}
+  20% {
+    z-index: 10
+  }
+
+  100% {
+    transform: rotateY(180deg);
+    z-index: 20;
+  }
 }
+
 @keyframes halfway {
-  20% { z-index: 20 }
-  100% {  transform: rotateY(180deg);
-    z-index: 1;}
+  20% {
+    z-index: 20
+  }
+
+  100% {
+    transform: rotateY(180deg);
+    z-index: 1;
+  }
 }
 
 .book {
@@ -106,7 +199,8 @@
   transform: rotateY(0deg);
 }
 
-.bookcover, .bookpage {
+.bookcover,
+.bookpage {
   position: absolute;
   padding: 1em;
   border-radius: 4px 0 0 4px;
@@ -120,6 +214,11 @@
   animation: openbook 4s forwards;
 }
 
+.cardDescription {
+  font-size: 0.875rem;
+  color: #AAA; // Light grey for descriptions
+}
+
 .bookcover.flip {
   animation: halfway 4s forwards;
 }
@@ -127,14 +226,54 @@
 .bookpage:nth-of-type(1) {
   animation-delay: 0.05s;
 }
+
 .bookpage:nth-of-type(2) {
   animation-delay: 0.33s
 }
 
 .motivation {
   margin: auto;
-  position: relative; 
+  position: relative;
   font-size: 3em;
   top: 6em;
   color: white;
+}
+
+.timer {
+  color: white;
+  font-size: 2.5em;
+}
+
+.typetimer {
+  color: white;
+  font-size: 3em;
+}
+
+.container1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #1E1E1E;
+  padding-top: 1em; 
+  padding-bottom: 1em;
+}
+
+.button1 {
+  position: relative;
+  padding: 10px 30px;
+  border: solid black 2px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: black;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.button1:hover {
+  background-color: purple;
 }
