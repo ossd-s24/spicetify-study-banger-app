@@ -3,7 +3,7 @@ import React from 'react'
 import ReadyToStudyPage from './ReadyToStudyPage';
 import StudyTimePage from './StudyTimePage';
 
-class App extends React.Component<{}, {count: number; isStudyTime: boolean}> {
+class App extends React.Component<{}, { count: number; isStudyTime: boolean }> {
   state = {
     count: 0,
     isStudyTime: false,
@@ -11,28 +11,35 @@ class App extends React.Component<{}, {count: number; isStudyTime: boolean}> {
 
   toggleStudyTime = () => {
     this.setState((state) => ({
-      count: state.count + 1, 
+      count: state.count + 1,
       isStudyTime: !state.isStudyTime,
     }));
   };
 
   renderPage = () => {
-    const {isStudyTime} = this.state;
+    const { isStudyTime } = this.state;
 
     if (isStudyTime) {
-      return <StudyTimePage onEndStudy={this.toggleStudyTime} />;
+      return <StudyTimePage onEndStudy={() => {
+        this.toggleStudyTime();
+      }} />;
     }
 
-    return <ReadyToStudyPage onStartStudy={this.toggleStudyTime} />;
+    return <ReadyToStudyPage onStartStudy={() => {
+      this.toggleStudyTime();
+    }} />;
   }
 
   render() {
+
+
+
     return <>
-      <div className={styles.container}>
-        {this.renderPage()}
-      </div>
+      {
+        this.renderPage()
+      }
     </>
-  } 
+  }
 }
 
 export default App;
