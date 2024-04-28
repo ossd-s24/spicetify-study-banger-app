@@ -23,7 +23,7 @@ Check out [Spicetify's docs](https://spicetify.app/docs/development/spicetify-cr
 Please read the [contribution guidelines](CONTRIBUTING.md) before opening a pull request or contributing to the repository.
 
 ## Code of Conduct
-Please read the [Code of Conduct](CODE-OF-CONDUCT.md) before contributing! 
+Please read the [Code of Conduct](CODE_OF_CONDUCT.md) before contributing! 
 
 ## License
 The project is made available under the [MIT](LICENSE). See the `LICENSE` file for more information. 
