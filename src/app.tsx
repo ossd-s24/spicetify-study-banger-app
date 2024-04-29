@@ -3,7 +3,7 @@ import React from 'react'
 import ReadyToStudyPage from './ReadyToStudyPage';
 import StudyTimePage from './StudyTimePage';
 
-class App extends React.Component<{}, {count: number; isStudyTime: boolean; lateNightTheme: boolean}> {
+class App extends React.Component<{}, { count: number; isStudyTime: boolean; lateNightTheme: boolean }> {
   state = {
     count: 0,
     isStudyTime: false,
@@ -69,7 +69,7 @@ class App extends React.Component<{}, {count: number; isStudyTime: boolean; late
       const value = {};
       const lines = color.split(/[\r\n]+/);
       let section: string | null = null;
-      lines.forEach(function(line) {
+      lines.forEach(function (line) {
         if (regex.comment.test(line)) {
           return;
         } else if (regex.param.test(line)) {
@@ -130,7 +130,7 @@ class App extends React.Component<{}, {count: number; isStudyTime: boolean; late
     if (isStudyTime) {
       return <StudyTimePage onEndStudy={() => {
         this.toggleStudyTime();
-      }} onChangeTheme={() => { this.toggleLateNightTheme(); }}/>;
+      }} onChangeTheme={() => { this.toggleLateNightTheme(); }} />;
     }
 
     return <ReadyToStudyPage onStartStudy={() => {

@@ -37,7 +37,9 @@
   background-image: url('https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
   background-size: cover;
   color: #FFF;
+  padding: 4% 2em;
 }
+
 
 .bigTitle {
   font-size: 3rem;
@@ -72,7 +74,8 @@
 }
 
 .card {
-  background: #1E1E1E; // Card background color
+  background: #292929; // Card background color
+  color: #FFF;
   border-radius: 8px;
   width: 200px; // Adjusted for correct card size
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
@@ -240,13 +243,16 @@
 }
 
 .timer {
-  color: white;
-  font-size: 2.5em;
+  color: #4CAF50;
+  font-size: 4em;
+  font-weight: 500;
 }
 
 .typetimer {
-  color: white;
-  font-size: 3em;
+  color: #FFFFFF;
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  font-weight: 400;
 }
 
 .container1 {
@@ -254,26 +260,30 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #1E1E1E;
-  padding-top: 1em; 
+  background-color: transparent;
+  padding-top: 1em;
   padding-bottom: 1em;
 }
 
 .button1 {
-  position: relative;
-  padding: 10px 30px;
-  border: solid black 2px;
-  border-radius: 15px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  color: black;
+  margin: 0.5em;
+  padding: 12px 36px;
+  border: none;
+  border-radius: 25px;
+  background-color: #4CAF50;
+  color: #FFFFFF;
   font-size: 1em;
+  font-weight: 400;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .button1:hover {
-  background-color: purple;
+  background-color: #367C3B;
+  transform: translateY(-2px);
+}
+
+body, button, input, textarea {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
 }
