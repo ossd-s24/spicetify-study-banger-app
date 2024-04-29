@@ -1,4 +1,4 @@
-# Contributing to Spiceitfy Study Banger App
+# Contributing to Spicetify Study Banger App
 
 Thank you so much for taking the time to contribute! ❤️
 
