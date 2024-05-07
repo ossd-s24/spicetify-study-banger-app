@@ -1,6 +1,6 @@
 {
     "name": "Study Banger",
-    "description": "App description",
+    "description": "This is a study application that allows you have a pomodoro timer to stay focused on whatever you need to do!",
     "preview": "./assets/top-background.jpeg",
     "readme": "README.md",
     "branch": "beta-release",
