@@ -1,0 +1,30 @@
+{
+    "name": "App Name",
+    "description": "App description",
+    "preview": "./assets/top-background.jpeg",
+    "readme": "README.md",
+    "branch": "beta-release",
+    "authors": [
+        {
+            "name": "b-chen00",
+            "github": "https://github.com/b-chen00"
+        },
+        {
+            "name": "JackZiyangChen",
+            "github": "https://github.com/JackZiyangChen"
+        },
+        {
+            "name": "laignelet16",
+            "github": "https://github.com/laignelet16/"
+        },
+        {
+            "name": "ak8000",
+            "github": "https://github.com/ak8000"
+        }
+    ],
+    "tags": [
+        "study",
+        "productivity",
+        "student"
+    ]
+}
